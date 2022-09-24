@@ -1,4 +1,5 @@
- $('.submit__click').on( "click", function sizeCounter(){
+
+  $('.submit__click').on( "click", function sizeCounter(){
     var userBackValue = $('.calculator__back_user').val();
     var userBreastValue = $('.calculator__breast_user').val();
     var userNeckValue = $('.calculator__neck_user').val();
@@ -19,7 +20,6 @@
 
 
       for( let i=0; i<sizeValueCounter.length; i++){
-        for( let i=0; i<sizeValueCounter.length; i++){
         if (
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
