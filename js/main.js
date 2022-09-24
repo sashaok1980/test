@@ -19,59 +19,14 @@
 
 
       for( let i=0; i<sizeValueCounter.length; i++){
+        for( let i=0; i<sizeValueCounter.length; i++){
         if (
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
           ){
             answer.html(sizeValueCounter[i][6]);
-        }else if(
-          userBackValue > sizeValueCounter[i][3]
-          && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
-          && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
-
-        ){
-          answer.html(sizeValueCounter[i][6]+' с увеличенной спиной')
-        }else if(
-          userBackValue < sizeValueCounter[i][0]
-          && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
-          && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
-        ){
-          answer.html(sizeValueCounter[i][6]+' с уменьшенной спиной')
-        }else if(
-          sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
-          && userBreastValue > sizeValueCounter[i][4]
-          && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
-        ){
-          answer.html(sizeValueCounter[i][6]+' с увеличенной грудью')
-        }else if(
-          sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
-          && userBreastValue < sizeValueCounter[i][1]
-          && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
-        ){
-          answer.html(sizeValueCounter[i][6]+' с уменьшенной грудью')
-        }else if(
-          sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
-          && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
-          && userNeckValue > sizeValueCounter[i][5]
-        ){
-          answer.html(sizeValueCounter[i][6]+' с увеличенной шеей')
-        }else if(
-          sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
-          && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
-          && userNeckValue < sizeValueCounter[i][2]
-        ){
-          answer.html(sizeValueCounter[i][6]+' с уменьшенной шеей')
-        }else if(
-          userBackValue == 0 || undefined || "" ||
-          userBreastValue == 0 || undefined || "" ||
-          userNeckValue == 0 || undefined || ""
-        ){
-          answer.html('Введите параметры')
-        }else{
-          answer.html('Сейчас доступно отклонение по 1 параметру')
         }
-        
 
       }
       
