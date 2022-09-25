@@ -1,24 +1,4 @@
-// $('.slick__slider_content').slick({
-//     slidesToShow: 4,
-//     slidesToScroll: 1,
-//     dots: true,
-//   });
-
-//s  sp 30-35 gr 40-45 sh 27-31
-//m  sp 35-41 gr 48-50 sh 31-35
-//l  sp 41-47 gr 51-59 sh 35-39
-
-//xl  sp 48-58 gr 60-69 sh 39-42
-
-//s+  sp 45-49 gr 66-72 sh 45-50
-//m+  sp 50-55 gr 73-75 sh 50-55
-//l+  sp 55-60 gr 80-85 sh 55-60
-//xl+  sp 6--65 gr 85-90 sh 60-65
-
-
-
-
-  $('.submit__click').on( "click", function sizeCounter(){
+ $('.submit__click').on( "click", function sizeCounter(){
     let userBackValue = +$('.calculator__back_user').val();
     let userBreastValue = +$('.calculator__breast_user').val();
     let userNeckValue = +$('.calculator__neck_user').val();
@@ -108,4 +88,3 @@
       }
       
   });
- 
