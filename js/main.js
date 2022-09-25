@@ -1,4 +1,4 @@
- $('.submit__click').on( "click", function sizeCounter(){
+  $('.submit__click').on( "click", function sizeCounter(){
     let userBackValue = +$('.calculator__back_user').val();
     let userBreastValue = +$('.calculator__breast_user').val();
     let userNeckValue = +$('.calculator__neck_user').val();
@@ -27,6 +27,7 @@
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
           ){
             answer.html(sizeValueCounter[i][6]);
+            return
         }
         else if(
           userBackValue == 0 || undefined || "" ||
@@ -35,13 +36,15 @@
         )
         {
           answer.html('Введите параметры')
+          return
         }
         else if(
           sizeValueCounter[i][0] > userBackValue
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[2])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[2]);
+          return
         }
         else if(
           sizeValueCounter[i][3] < userBackValue
@@ -49,6 +52,7 @@
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
           answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[2])
+          return
         }
         else if(
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
@@ -56,6 +60,7 @@
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
           answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[3])
+          return
         }
         else if(
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
@@ -63,6 +68,7 @@
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
           answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[3])
+          return
         }
         else if(
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
@@ -70,6 +76,7 @@
           && sizeValueCounter[i][2] > userNeckValue
         ){
           answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[4])
+          return
         }
         else if(
           sizeValueCounter[i][0]<= userBackValue && userBackValue <= sizeValueCounter[i][3]
@@ -77,6 +84,7 @@
           && sizeValueCounter[i][5] < userNeckValue
         ){
           answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[4])
+          return
         }else{
           answer.html('Индивидуальный пошив')
         }
