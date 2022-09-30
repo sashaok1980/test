@@ -53,7 +53,7 @@
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[2]+(userBackValue - sizeValueCounter[i][0])+centimeters)
+          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[2]+(userBackValue - sizeValueCounter[i][3])+centimeters)
           return
         }
         else if(
