@@ -1,4 +1,4 @@
-  $('.submit__click').on( "click", function sizeCounter(){
+    $('.submit__click').on( "click", function sizeCounter(){
     let userBackValue = +$('.calculator__back_user').val();
     let userBreastValue = +$('.calculator__breast_user').val();
     let userNeckValue = +$('.calculator__neck_user').val();
@@ -15,10 +15,12 @@
     answerTextValue = [
       increasedText = ' с увеличенной ',
       reducedText= ' с уменьшенной ',
-      back = 'спиной',
-      breast = 'грудью',
-      back = 'шей',
+      back = 'спиной на ',
+      breast = 'грудью на ',
+      back = 'шей на ',
     ]
+    let centimeters = ' см';
+
     let answer = $('.counter');
       for( let i=0; i<sizeValueCounter.length; i++){
         if (
@@ -43,7 +45,7 @@
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[2]);
+          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[2]+(sizeValueCounter[i][0] - userBackValue)+centimeters);
           return
         }
         else if(
@@ -51,7 +53,7 @@
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[2])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[2]+(userBackValue - sizeValueCounter[i][0])+centimeters)
           return
         }
         else if(
@@ -59,7 +61,7 @@
           && sizeValueCounter[i][1] > userBreastValue 
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[3])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[3]+(sizeValueCounter[i][1] - userBreastValue)+centimeters)
           return
         }
         else if(
@@ -67,7 +69,7 @@
           && sizeValueCounter[i][4] < userBreastValue 
           && sizeValueCounter[i][2]<= userNeckValue && userNeckValue <= sizeValueCounter[i][5]
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[3])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[3]+(userBreastValue - sizeValueCounter[i][4])+centimeters)
           return
         }
         else if(
@@ -75,7 +77,7 @@
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][2] > userNeckValue
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[4])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[1]+answerTextValue[4]+(sizeValueCounter[i][2] - userNeckValue)+centimeters)
           return
         }
         else if(
@@ -83,16 +85,11 @@
           && sizeValueCounter[i][1]<= userBreastValue && userBreastValue <= sizeValueCounter[i][4]
           && sizeValueCounter[i][5] < userNeckValue
         ){
-          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[4])
+          answer.html(sizeValueCounter[i][6]+answerTextValue[0]+answerTextValue[4]+(userNeckValue - sizeValueCounter[i][5])+centimeters)
           return
         }else{
           answer.html('Индивидуальный пошив')
         }
-
-              
-        
-        
-
       }
       
   });
